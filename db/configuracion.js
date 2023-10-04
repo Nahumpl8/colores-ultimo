@@ -2,10 +2,10 @@ const postgres = require("postgres");
 
 function conectar(){
     return postgres({
-        host: 'dpg-cke0li4gonuc738o5t40-a.frankfurt-postgres.render.com',
-        user: 'nahumpl8',     
-        password: 'Us7MZ3acu0hDyiYEb0q6O76zhhESog7F',
-        database: 'estudiantes_yy5d',
+        host: process.env.URL_HOST,
+        user: process.env.USER,     
+        password: process.env.PASSWORD,
+        database: process.env.DATABASE,
         port: 5432,
         ssl: true
     })
@@ -29,5 +29,6 @@ function crear(color){
     }) 
 }
 
-module.exports = {conectar, mostrarColores};
+
+module.exports = {conectar, mostrarColores, crear};
 

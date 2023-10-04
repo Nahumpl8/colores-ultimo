@@ -1,5 +1,5 @@
 const express = require("express");
-const {mostrarColores} = require("./db/configuracion.js")
+const {mostrarColores, crear} = require("./db/configuracion.js")
 
 const servidor = express();
 
