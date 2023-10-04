@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista colores</h1>
+    <ul></ul>
+
+    <script>
+
+        const lista = document.querySelector("ul"); 
+
+        fetch("http://localhost:4000/colores")
+        .then(respuesta => respuesta.json())
+        .then(colores => {
+            console.log(colores);
+            colores.forEach(({color}) => {
+                let item = document.createElement("li");
+                item.innerHTML = [color];
+                item.style.color = [color]
+                item.style.fontSize = '2rem'
+                lista.appendChild(item);
+            });
+        })
+    </script>
+</body>
+</html>
